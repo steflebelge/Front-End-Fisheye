@@ -1,3 +1,4 @@
+@import url("style.css");
 #contact_modal {
     display: none;
 }
@@ -6,6 +7,18 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.photograph-header span h3{
+    margin: 16px 0;
+}
+
+.photographer_section article img {
+    margin-right: 0;
 }
 
 .contact_button {
@@ -13,12 +26,13 @@
     font-weight: bold;
     color: white;
     padding: 11px;
-    width: 170px;
+    max-width: 170px;
     height: 70px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'DM Sans';
 }
 
 .modal {
@@ -73,4 +87,11 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.photograph-header img{
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: unset;
 }

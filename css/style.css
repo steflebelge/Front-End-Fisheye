@@ -1,4 +1,4 @@
-@import url("photographer.css");
+
 
 body {
     font-family: "DM Sans", sans-serif;
@@ -38,31 +38,40 @@ h1 {
     align-items: center;
     flex-direction: column;
 }
+.photograph-header * ,
 .photographer_section article *{
     font-weight: 400;
 }
+.photograph-header article ,
 .photographer_section article a{
     text-decoration: none;
 }
 
+.photograph-header h2,
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
     margin: 0;
     text-align: center;
 }
+.photograph-header h2{
+    text-align: left;
+}
+.photograph-header h3,
 .photographer_section article h3 {
     margin: 0 0 3px 0;
     color: #901C1C;
     font-size: 13px;
     line-height: 17px;
 }
+.photograph-header h4,
 .photographer_section article h4 {
     margin: 3px 0;
     font-size: 10px;
     line-height: 13px;
     color: #000000;
 }
+.photograph-header h5,
 .photographer_section article h5 {
     margin: 0;
     font-size: 9px;
@@ -70,6 +79,7 @@ h1 {
     color: #757575;
 }
 
+.photograph-header img,
 .photographer_section article img {
     height: 200px;
     width: 200px;
