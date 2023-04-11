@@ -3,23 +3,115 @@
     display: none;
 }
 
+.photograph-header,
+.photographer_section{
+    margin: 0 100px;
+    display: flex;
+}
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
-    padding: 0 50px;
-    display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 50px;
+    margin-bottom: 20px;
 }
+
 
 .photograph-header span h3{
     margin: 16px 0;
 }
 
+.photographer_section {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .photographer_section article img {
     margin-right: 0;
 }
+
+.photographer_section div#tri {
+    width: 100%;
+}
+.photographer_section div#tri label{
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: 25px;
+    color: #000000;
+}
+
+.photographer_section div#tri select{
+    background: #911C1C;
+    border-radius: 5px;
+    border: 0;
+    padding: 10px;
+    color: white;
+}
+
+.photographer_section div.preview{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.photographer_section div.preview img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.photographer_section div.preview img:hover {
+    cursor: pointer;
+}
+
+
+.photographer_section div.preview span.infosContainer{
+    margin-top: 10px;
+    color: #911C1C;
+}
+
+.photographer_section div.preview span.infosContainer p{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+.photographer_section div.preview span.infosContainer p.likesCounter {
+    float: right;
+}
+.photographer_section div.preview span.infosContainer img{
+    width: 15px;
+    height: 15px;
+    float: right;
+    margin-top: 3px;
+    margin-left: 5px;
+    border-radius: 0;
+}
+
+div#bandeau{
+    width: min-content;
+    min-width: 200px;
+    position: fixed;
+    bottom: -5px;
+    right: 35px;
+    background: #DB8876;
+    border-radius: 5px;
+    padding: 5px;
+    height: 30px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div#bandeau img{
+    width: 15px;
+    height: 15px;
+}
+
+
+
+
 
 .contact_button {
     font-size: 20px;

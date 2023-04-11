@@ -24,5 +24,43 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+function changeTri() {
+    let allMedias = document.querySelectorAll("div.preview");
+    let triValue = document.querySelector('select').selectedOptions[0].innerText;
+    debugger
 
-export {getPhotographers, displayModal, closeModal};
+    switch (triValue) {
+        case "Popularité":
+            break;
+        case "Date":
+            break;
+        case "Titre":
+            break;
+    }
+}
+
+function gestionLikes(element) {
+    element.classList.toggle('liked');
+    let count = parseInt(element.nextElementSibling.innerText);
+    let totalCount = parseInt(document.getElementById('bandeau').firstElementChild.innerText);
+
+    //calcul des nouveaux totaux
+    if (element.classList.contains('liked')) {
+        count++;
+        totalCount++;
+    } else {
+        count--;
+        totalCount--;
+    }
+
+    //mise a jour de la photo
+    element.nextElementSibling.innerText = count;
+debugger
+    //MAJ bandeau
+    document.getElementById('bandeau').firstElementChild.innerHTML = document.getElementById('bandeau').firstElementChild.innerHTML.replace(document.getElementById('bandeau').firstElementChild.innerText, totalCount);
+
+    //ajout json ?
+}
+
+
+export {getPhotographers, displayModal, closeModal, changeTri, gestionLikes};

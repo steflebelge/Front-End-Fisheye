@@ -40,26 +40,45 @@ function photographerFactory(data, pageConcernee) {
             article.appendChild(prix);
             return (article);
         } else {
+            //page d'un photographe :
+            //gestion du header
             //crée les elements manquants
             const span = document.createElement('span');
-
-            //modifie header
             span.appendChild(nameElt);
             span.appendChild(localisation);
             span.appendChild(slogan);
             photographHeader.insertAdjacentElement("afterbegin", span);
-
             photographHeader.insertAdjacentElement("beforeend", img);
 
-            // crée et retourne la section
-            //?ajout encart dans header avec position absolute ?
+            // gestion du contenu
 
             //preparation des elements pour la page d'un photographe
             const divSection = document.createElement('div');
-            divSection.classList.add('photograph-section');
+            divSection.classList.add('photographer_section');
 
-            //ajout des elements aux bon endroits
+            //creation des elements manquants
 
+            //tri (label + select + options
+            let labelTri = document.createElement('label');
+            labelTri.innerText = "Trier par ";
+            let selectTri = document.createElement('select');
+            selectTri.setAttribute("onchange", "changeTri()");
+            labelTri.setAttribute('for', 'selectTri');
+            let optionPopularite = document.createElement('option');
+            optionPopularite.innerText = "Popularité";
+            selectTri.appendChild(optionPopularite);
+            let optionDate = document.createElement('option');
+            optionDate.innerText = "Date";
+            selectTri.appendChild(optionDate);
+            let optionTitre = document.createElement('option');
+            optionTitre.innerText = "Titre";
+            selectTri.appendChild(optionTitre);
+            let triContainer = document.createElement('div');
+            triContainer.id = "tri";
+            triContainer.appendChild(labelTri);
+            triContainer.appendChild(selectTri);
+
+            divSection.appendChild(triContainer);
             return (divSection);
         }
     }
