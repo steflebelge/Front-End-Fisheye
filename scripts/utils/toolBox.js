@@ -25,7 +25,13 @@ function closeModal() {
 }
 function displaylightBox(elt) {
     const lightBox = document.getElementById("lightBox");
-    lightBox.querySelector('div#media').innerHTML = elt.outerHTML;
+    debugger
+    let imgTmp = document.createElement('img');
+    imgTmp.src = elt.src;
+    let textTmp = document.createElement('p');
+    textTmp.innerText = elt.parentElement.dataset.titre;
+    lightBox.querySelector('div#media').appendChild(imgTmp);
+    lightBox.querySelector('div#media').appendChild(textTmp);
     lightBox.style.display = "block";
 }
 function closelightBox() {
