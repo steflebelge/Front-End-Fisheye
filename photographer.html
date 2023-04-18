@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+<head>
+    <link href="css/photographer.css" rel="stylesheet" type="text/css"/>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-        <a href="/Front-End-Fisheye/"><img src="assets/images/logo.png" class="logo" /></a>
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+</head>
+<body>
+<header>
+    <a href="/Front-End-Fisheye/"><img src="assets/images/logo.png" class="logo"/></a>
+</header>
+<main id="main">
+    <div class="photograph-header">
+        <button id="openModal" class="contact_button">Contactez-moi</button>
+    </div>
+</main>
+<div id="contact_modal">
+    <div class="modal">
+        <header>
+            <h2>Contactez-moi</h2>
+            <img id="closeModale" src="assets/icons/close.svg"/>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script type="module" src="scripts/pages/photographer.js"></script>
-  </body>
+        <h3></h3>
+        <form onsubmit="event.preventDefault()">
+            <div>
+                <label for="prenom">Prénom</label>
+                <input required type="text" placeholder="Jean" id="prenom" name="prenom"/>
+            </div>
+            <div>
+                <label for="nom">Nom</label>
+                <input required type="text" placeholder="Dujardin" id="nom" name="nom"/>
+            </div>
+            <div>
+                <label for="mail">Mail</label>
+                <input required type="email" placeholder="Jean.dujardin@gmail.com" id="mail" name="mail"/>
+            </div>
+            <div>
+                <label for="msg">Message</label>
+                <textarea required name="msg" id="msg" cols="30" rows="10"></textarea>
+            </div>
+            <button id="sendForm" class="contact_button">Envoyer</button>
+        </form>
+    </div>
+</div>
+<div id="lightBox">
+    <div class="modal">
+        <img id="prev" class="filterToRed" src="assets/icons/arrow.svg" alt="">
+        <div id="media"></div>
+        <img id="next" class="filterToRed" src="assets/icons/arrow.svg" alt="">
+        <img id="close" class="filterToRed" src="assets/icons/close.svg" alt="">
+    </div>
+</div>
+<script type="module" src="scripts/pages/photographer.js"></script>
+</body>
 </html>

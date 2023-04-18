@@ -1,9 +1,9 @@
 function mediaFactory(mediaData, folderName) {
-    debugger
     let divTmp = document.createElement('div');
     divTmp.classList.add('preview');
     divTmp.dataset.date = mediaData.date;
     divTmp.dataset.likes = mediaData.likes;
+    divTmp.dataset.titre = mediaData.title;
 
     let textTmp = document.createElement('p');
     textTmp.innerText = mediaData.title;
@@ -14,19 +14,21 @@ function mediaFactory(mediaData, folderName) {
     likesCounter.innerText = mediaData.likes;
     likesCounter.classList.add("likesCounter");
 
-
     let likesImage = document.createElement('img');
     likesImage.classList.add("likesImage");
-    likesImage.setAttribute("src", "assets/favicon.png");
+    likesImage.classList.add("filterToRed");
+    likesImage.setAttribute("src", "assets/icons/like.svg");
 
     let imgTmp = document.createElement('img');
 
     if(mediaData.image){
         imgTmp.setAttribute("src", folderName + mediaData.image);
     }else{
-        imgTmp.setAttribute("src", folderName + mediaData.video);
+        //balise video + autoplay false
+        imgTmp = document.createElement('video');
+        imgTmp.src=folderName + mediaData.video;
+        imgTmp.innerText = "Votre navigateur ne permet pas de lire les vidéos. Mais vous pouvez toujours";
     }
-
 
     infosContainer.appendChild(textTmp);
     infosContainer.appendChild(likesImage);

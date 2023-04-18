@@ -1,4 +1,12 @@
-import {getPhotographers, changeTri, displayModal, closeModal, gestionLikes} from "../utils/toolBox.js";
+import {
+    getPhotographers,
+    changeTri,
+    displayModal,
+    closeModal,
+    gestionLikes,
+    submitForm,
+    displaylightBox, closelightBox, prevMedia, nextMedia
+} from "../utils/toolBox.js";
 import photographerFactory from "../factories/photographer.js";
 import mediaFactory from "../factories/media.js";
 
@@ -23,11 +31,28 @@ async function displayData(specifiquePhotographer, specifiquePhotographerMedias)
 
 
     //set des events listeners
-    photographerSection.querySelector("select").addEventListener("change", changeTri.bind(this));
+    //changement de tri
+    photographerSection.querySelector('select').addEventListener('change', changeTri);
+
+    //click sur like
     photographerSection.querySelectorAll("img.likesImage").forEach(function (imgTmp) {
         imgTmp.addEventListener("click", gestionLikes.bind(this, imgTmp));
     });
 
+    //click sur image
+    photographerSection.querySelectorAll("div.preview").forEach(function (divTmp) {
+        divTmp.firstElementChild.addEventListener("click", displaylightBox.bind(this, divTmp.firstElementChild));
+    });
+
+    const photographerHeader = mainContent.firstElementChild;
+    document.getElementById('openModal').addEventListener('click', displayModal);
+    document.getElementById('closeModale').addEventListener('click', closeModal);
+    document.getElementById('sendForm').addEventListener('click', submitForm);
+    document.getElementById('contact_modal').querySelector('h3').innerText = specifiquePhotographer.name;
+
+    document.getElementById('lightBox').querySelector("img#prev").addEventListener('click', prevMedia);
+    document.getElementById('lightBox').querySelector("img#next").addEventListener('click', nextMedia);
+    document.getElementById('lightBox').querySelector("img#close").addEventListener('click', closelightBox);
 
     //ajout du bandeau likes et tarifs
     let bandeau = document.createElement('div');
@@ -35,7 +60,8 @@ async function displayData(specifiquePhotographer, specifiquePhotographerMedias)
     let nbLike = document.createElement('p');
     nbLike.innerText = totalLikes;
     let imgLike = document.createElement('img');
-    imgLike.setAttribute("src", "assets/favicon.png");
+    imgLike.setAttribute("src", "assets/icons/like.svg");
+    imgLike.classList.add('filterToRed');
     let tarif = document.createElement('p')
     tarif.innerText = `${specifiquePhotographer.price}€ / jour`;
 
@@ -45,9 +71,10 @@ async function displayData(specifiquePhotographer, specifiquePhotographerMedias)
 
     document.body.appendChild(bandeau);
 
-
     //ajout du contenu a la page
     mainContent.appendChild(photographerSection);
+
+    changeTri();
 }
 
 async function init() {
