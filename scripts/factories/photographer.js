@@ -29,7 +29,7 @@ function photographerFactory(data, pageConcernee) {
             const linkContainer = document.createElement('a');
 
             //set de leurs attributs
-            linkContainer.setAttribute('href', `photographer.html?id=${id}`)
+            linkContainer.setAttribute('href', `photographer.html?id=${id}`);
 
             //ajout des elements dans l'article
             linkContainer.appendChild(img);
@@ -62,7 +62,7 @@ function photographerFactory(data, pageConcernee) {
             let labelTri = document.createElement('label');
             labelTri.innerText = "Trier par ";
             let selectTri = document.createElement('select');
-            // selectTri.setAttribute("onchange", "changeTri()");
+            selectTri.tabIndex = "3";
             labelTri.setAttribute('for', 'selectTri');
             let optionPopularite = document.createElement('option');
             optionPopularite.classList.add('test');

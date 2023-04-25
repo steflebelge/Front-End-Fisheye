@@ -1,0 +1,82 @@
+
+
+/*Responsive*/
+@media only screen and (max-width: 960px) {
+
+    .photograph-header{
+        flex-direction: column;
+        height: max-content;
+        gap: 45px;
+        padding: 50px 0;
+    }
+
+    .photographer_section {
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
+
+    #closeModale {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+
+    div.modal{
+        width: 75%;
+    }
+
+    .modal header h2{
+        width: 80%;
+        text-align: left;
+        font-size: 45px;
+    }
+
+}
+
+@media only screen and (max-width: 680px) {
+    header{
+        flex-direction: column;
+    }
+
+    header h1{
+        margin-right: 0;
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+
+    .photographer_section {
+        grid-template-columns: 1fr;
+    }
+
+    .modal header h2{
+        margin: 0;
+        width: 100%;
+    }
+
+    #msg {
+        max-height: 75px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .modal{
+        padding: 10px;
+    }
+
+    #closeModale {
+        right: -30px;
+        width: 30px;
+    }
+
+    .modal header h2{
+        font-size: 40px;
+    }
+
+    div#lightBox .modal > img#next,
+    div#lightBox .modal > img#close{
+        right: 10px;
+    }
+}

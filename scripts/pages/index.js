@@ -1,4 +1,4 @@
-import {getPhotographers} from "../utils/toolBox.js";
+import {getPhotographers, navigationClavier} from "../utils/toolBox.js";
 import photographerFactory from "../factories/photographer.js";
 
 async function displayData(photographers) {
@@ -21,3 +21,5 @@ async function init() {
     displayData(photographers);
 }
 init();
+
+document.body.addEventListener('keydown', navigationClavier.bind(this, event));

@@ -4,6 +4,8 @@ function mediaFactory(mediaData, folderName) {
     divTmp.dataset.date = mediaData.date;
     divTmp.dataset.likes = mediaData.likes;
     divTmp.dataset.titre = mediaData.title;
+    divTmp.dataset.idMedia = mediaData.id;
+
 
     let textTmp = document.createElement('p');
     textTmp.innerText = mediaData.title;

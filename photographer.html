@@ -2,6 +2,7 @@
 <html>
 <head>
     <link href="css/photographer.css" rel="stylesheet" type="text/css"/>
+    <link href="css/responsive.css" rel="stylesheet" type="text/css"/>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -9,11 +10,11 @@
 </head>
 <body>
 <header>
-    <a href="/Front-End-Fisheye/"><img src="assets/images/logo.png" class="logo"/></a>
+    <a tabindex="1" href="/Front-End-Fisheye/"><img src="assets/images/logo.png" class="logo"/></a>
 </header>
 <main id="main">
     <div class="photograph-header">
-        <button id="openModal" class="contact_button">Contactez-moi</button>
+        <button  tabindex="2" id="openModal" class="contact_button">Contactez-moi</button>
     </div>
 </main>
 <div id="contact_modal">
@@ -34,7 +35,7 @@
             </div>
             <div>
                 <label for="mail">Mail</label>
-                <input required type="email" placeholder="Jean.dujardin@gmail.com" id="mail" name="mail"/>
+                <input required type="email" placeholder="Jean.dujardin@gmail.com" id="mail" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
             </div>
             <div>
                 <label for="msg">Message</label>

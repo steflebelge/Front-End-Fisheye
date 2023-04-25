@@ -1,3 +1,5 @@
+import photographerFactory from "../factories/photographer.js";
+import mediaFactory from "../factories/media.js";
 import {
     getPhotographers,
     changeTri,
@@ -5,10 +7,8 @@ import {
     closeModal,
     gestionLikes,
     submitForm,
-    displaylightBox, closelightBox, prevMedia, nextMedia
+    displaylightBox, closelightBox, prevMedia, nextMedia, navigationClavier
 } from "../utils/toolBox.js";
-import photographerFactory from "../factories/photographer.js";
-import mediaFactory from "../factories/media.js";
 
 async function displayData(specifiquePhotographer, specifiquePhotographerMedias) {
     //recuperation de la div
@@ -21,7 +21,6 @@ async function displayData(specifiquePhotographer, specifiquePhotographerMedias)
 
     let totalLikes = 0;
     let photosFolder = specifiquePhotographer.name.slice(0, specifiquePhotographer.name.indexOf(' ')).replace('-', " ");
-
     //ajout des contenus multimédias
     specifiquePhotographerMedias.forEach(function (mediaTmp) {
         let divMediaTmp = mediaFactory(mediaTmp, "assets/photographers/" + photosFolder + "/");
@@ -94,3 +93,4 @@ async function init() {
 }
 
 init();
+document.body.addEventListener('keydown', navigationClavier.bind(this, event));
