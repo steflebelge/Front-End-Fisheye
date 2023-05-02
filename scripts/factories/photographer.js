@@ -1,3 +1,5 @@
+//Photographers factory, crée les elements neccessaire a l'affichage des photographes selon la page en cours
+
 function photographerFactory(data, pageConcernee){
     //recuperation des variables a partir de la data
     const {name, portrait, city, country, price, tagline, id} = data;

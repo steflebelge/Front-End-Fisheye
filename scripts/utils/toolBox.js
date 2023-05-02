@@ -1,3 +1,6 @@
+//Fonctions utiles a différents endroits du site
+
+//recuperation des infos sur les photographes via le JSON
 async function getPhotographers() {
     //on requete le fichier JSON
     return fetch("data/photographers.json").then(function (response) {
@@ -14,6 +17,7 @@ async function getPhotographers() {
     });
 }
 
+//gestion de la navigation au clavier
 function navigationClavier() {
     //on recupere l'event
     let e = arguments[1];
@@ -76,17 +80,18 @@ function navigationClavier() {
     }
 }
 
+//Gestion de l'affichage/désaffichage de la modale de contact
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "block";
     modal.querySelector('input').focus();
 }
-
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
 
+//Gestion de l'affichage/désaffichage de la lightBox
 function displaylightBox(elt) {
     const lightBox = document.getElementById("lightBox");
     lightBox.querySelector('div#media').innerHTML = "";
@@ -110,13 +115,12 @@ function displaylightBox(elt) {
     if (elt.nodeName === "VIDEO")
         document.getElementById("lightBox").querySelector('video').focus();
 }
-
-
 function closelightBox() {
     const lightBox = document.getElementById("lightBox");
     lightBox.style.display = "none";
 }
 
+//Gestion de la navigation au clavier entre les medias d'un photographe
 function nextMedia() {
     //recuperation id dans data-set
     let idImgActuelle = document.getElementById('media').firstElementChild.id;
@@ -130,7 +134,6 @@ function nextMedia() {
         document.querySelector('div.preview').firstElementChild.click();
 
 }
-
 function prevMedia() {
     //recuperation id dans data-set
     let idImgActuelle = document.getElementById('media').firstElementChild.id;
@@ -145,6 +148,7 @@ function prevMedia() {
         document.querySelectorAll('div.preview')[document.querySelectorAll('div.preview').length - 1].firstElementChild.click();
 }
 
+//Gestion du tri des medias d'un photographe
 function changeTri() {
     let photographer_section = document.querySelector('div.photographer_section');
     let tri = photographer_section.querySelector('div#tri');
@@ -184,6 +188,7 @@ function changeTri() {
     });
 }
 
+//Gestion du nombre de llike d'un media sur clic d'une icone coeur, met aussi a jour l'encart avec le total de likes
 function gestionLikes(element) {
     element.classList.toggle('liked');
     let count = parseInt(element.nextElementSibling.innerText);
@@ -212,6 +217,7 @@ function gestionLikes(element) {
         changeTri();
 }
 
+//Verification de la validité du formulaire de contact
 function checkFormValid(form) {
     let res = true;
     //parcours des input + verification de leur validité
@@ -231,8 +237,8 @@ function checkFormValid(form) {
     return res;
 }
 
+//Fonction de soumission du formulaire de contact
 function submitForm() {
-
     //verification des entres du formulaire
     if (checkFormValid(document.querySelector('form'))) {
 
@@ -255,7 +261,7 @@ function submitForm() {
     }
 }
 
-
+//Exports des fonctions
 export {
     getPhotographers,
     displayModal,

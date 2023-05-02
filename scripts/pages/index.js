@@ -1,6 +1,9 @@
 import {getPhotographers, navigationClavier} from "../utils/toolBox.js";
 import photographerFactory from "../factories/photographer.js";
 
+//Script de la page d'accueil
+
+//fonction d'affichage des photographes
 async function displayData(photographers) {
     //recuperation de la div
     const photographersSection = document.querySelector(".photographer_section");
@@ -20,4 +23,5 @@ async function init() {
     //crée et affiche les photographes
     displayData(photographers);
 }
+//On lance la fonction d'initialisation de la page une fois tout les scripts correctements chargés
 init();

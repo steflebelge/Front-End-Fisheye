@@ -10,6 +10,9 @@ import {
     displaylightBox, closelightBox, prevMedia, nextMedia, navigationClavier
 } from "../utils/toolBox.js";
 
+//Script de gestion du fonctionnement de la page d'un photographe
+
+//Affichage des donées liées au photographe concerné
 async function displayData(specifiquePhotographer, specifiquePhotographerMedias) {
     //recuperation de la div
     const mainContent = document.querySelector("main#main");
@@ -92,6 +95,8 @@ async function init() {
     // completeHeaderSection(specifiquePhotographer);
     displayData(specifiquePhotographer, specifiquePhotographerMedias);
 }
-
+//On lance la fonction d'initialisation de la page une fois tout les scripts correctements chargés
 init();
+
+//Ajout de l'event listener sur appuis d'une touche du clavier pour navigation au clavier
 document.body.addEventListener('keydown', navigationClavier.bind(this, event));

@@ -1,3 +1,4 @@
+//Media factory, crée les elements neccessaire a l'affichage des medias salon leur type (img/video)
 function mediaFactory(mediaData, folderName) {
     let divTmp = document.createElement('div');
     divTmp.classList.add('preview');
