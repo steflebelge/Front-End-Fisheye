@@ -21,5 +21,3 @@ async function init() {
     displayData(photographers);
 }
 init();
-
-document.body.addEventListener('keydown', navigationClavier.bind(this, event));

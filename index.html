@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/responsive.css" rel="stylesheet" type="text/css"/>
@@ -7,14 +7,15 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye</title>
+    <meta charset="utf-8"/>
   </head>
   <body>
-    <header>
-        <a  tabindex="1" href="/Front-End-Fisheye/"><img src="assets/images/logo.png" class="logo" /></a>
-        <h1>Nos photographes</h1>
+    <header aria-label="header">
+        <a aria-labelledby="header" tabindex="1" title="Go to home page" href="/Front-End-Fisheye/"><img src="assets/images/logo.png" alt="Logo FishEye" class="logo" /></a>
+        <h1 aria-labelledby="header">Nos photographes</h1>
     </header>
-    <main id="main">
-        <div class="photographer_section"></div>
+    <main aria-label="mainContent" id="main">
+        <div aria-labelledby="mainContent" class="photographer_section"></div>
     </main>
     <script type="module" src="scripts/pages/index.js"></script>
   </body>
@@ -26,14 +27,13 @@ todo :
   - revoir tailles ecriture
 
   - Accessibilité a gerer
+  - revoir balises semantiques
   - validateurs
-  - lecteur ecran
+  - lecteur ecran (chrome)
   - eslint
   - revoir commentaires
 -->
 
 <!--
-  lightbox p centré ?
-  pB nomage fichiers /// json
-  video Drone shot of Buenos Aires highways 0 son ?
+  lightbox p centré ? => passage de img -> fig/figcaption
 -->

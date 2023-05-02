@@ -25,11 +25,12 @@ function mediaFactory(mediaData, folderName) {
 
     if(mediaData.image){
         imgTmp.setAttribute("src", folderName + mediaData.image);
+        imgTmp.setAttribute("alt", mediaData.title);
     }else{
         //balise video + autoplay false
         imgTmp = document.createElement('video');
         imgTmp.src=folderName + mediaData.video;
-        imgTmp.innerText = "Votre navigateur ne permet pas de lire les vidéos. Mais vous pouvez toujours";
+        imgTmp.innerText = "Votre navigateur ne permet pas de lire les vidéos.";
     }
 
     infosContainer.appendChild(textTmp);

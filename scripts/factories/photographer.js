@@ -1,4 +1,4 @@
-function photographerFactory(data, pageConcernee) {
+function photographerFactory(data, pageConcernee){
     //recuperation des variables a partir de la data
     const {name, portrait, city, country, price, tagline, id} = data;
 
@@ -62,6 +62,7 @@ function photographerFactory(data, pageConcernee) {
             let labelTri = document.createElement('label');
             labelTri.innerText = "Trier par ";
             let selectTri = document.createElement('select');
+            selectTri.setAttribute("aria-label", "Tri des medias");
             selectTri.tabIndex = "3";
             labelTri.setAttribute('for', 'selectTri');
             let optionPopularite = document.createElement('option');
@@ -77,6 +78,7 @@ function photographerFactory(data, pageConcernee) {
             optionTitre.innerText = "Titre";
             selectTri.appendChild(optionTitre);
             let triContainer = document.createElement('div');
+            triContainer.setAttribute("aria-haspopup", "true");
             triContainer.id = "tri";
             triContainer.appendChild(labelTri);
             triContainer.appendChild(selectTri);

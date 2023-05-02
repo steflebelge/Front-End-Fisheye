@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <link href="css/photographer.css" rel="stylesheet" type="text/css"/>
     <link href="css/responsive.css" rel="stylesheet" type="text/css"/>
@@ -7,18 +7,19 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
+    <meta charset="utf-8"/>
 </head>
 <body>
-<header>
-    <a tabindex="1" href="/Front-End-Fisheye/"><img src="assets/images/logo.png" class="logo"/></a>
+<header aria-label="header">
+    <a aria-labelledby="header" tabindex="1" title="Go to home page" href="/Front-End-Fisheye/"><img src="assets/images/logo.png" alt="Logo FishEye" class="logo"/></a>
 </header>
-<main id="main">
-    <div class="photograph-header">
-        <button  tabindex="2" id="openModal" class="contact_button">Contactez-moi</button>
+<main aria-label="mainContent" id="main">
+    <div aria-labelledby="mainContent" class="photograph-header">
+        <button aria-haspopup="true" role="button" tabindex="2" id="openModal" class="contact_button">Contactez-moi</button>
     </div>
 </main>
-<div id="contact_modal">
-    <div class="modal">
+<div id="contact_modal" aria-label="contactForm">
+    <div class="modal" aria-labelledby="contactForm">
         <header>
             <h2>Contactez-moi</h2>
             <img id="closeModale" src="assets/icons/close.svg"/>
@@ -27,30 +28,30 @@
         <form onsubmit="event.preventDefault()">
             <div>
                 <label for="prenom">Prénom</label>
-                <input required type="text" placeholder="Jean" id="prenom" name="prenom"/>
+                <input required aria-required="true" aria-describedby="text" type="text" placeholder="Jean" id="prenom" aria-label="prenom" name="prenom"/>
             </div>
             <div>
                 <label for="nom">Nom</label>
-                <input required type="text" placeholder="Dujardin" id="nom" name="nom"/>
+                <input required aria-required="true" aria-describedby="text" type="text" placeholder="Dujardin" id="nom" aria-label="nom" name="nom"/>
             </div>
             <div>
                 <label for="mail">Mail</label>
-                <input required type="email" placeholder="Jean.dujardin@gmail.com" id="mail" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                <input required aria-required="true" aria-describedby="email" type="email" placeholder="Jean.dujardin@gmail.com" aria-label="email" id="mail" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
             </div>
             <div>
                 <label for="msg">Message</label>
-                <textarea required name="msg" id="msg" cols="30" rows="10"></textarea>
+                <textarea required aria-required="true" name="msg" id="msg" cols="30" rows="10"></textarea>
             </div>
             <button id="sendForm" class="contact_button">Envoyer</button>
         </form>
     </div>
 </div>
-<div id="lightBox">
-    <div class="modal">
-        <img id="prev" class="filterToRed" src="assets/icons/arrow.svg" alt="">
+<div id="lightBox" aria-label="lightBox">
+    <div class="modal" aria-labelledby="lightBox">
+        <img id="prev" class="filterToRed" src="assets/icons/arrow.svg" title="Image précedente" alt="Image précedente">
         <div id="media"></div>
-        <img id="next" class="filterToRed" src="assets/icons/arrow.svg" alt="">
-        <img id="close" class="filterToRed" src="assets/icons/close.svg" alt="">
+        <img id="next" class="filterToRed" src="assets/icons/arrow.svg" title="Image suivante" alt="Image suivante">
+        <img id="close" class="filterToRed" src="assets/icons/close.svg" title="Fermer la lightBox" alt="Fermer la lightBox">
     </div>
 </div>
 <script type="module" src="scripts/pages/photographer.js"></script>

@@ -24,6 +24,7 @@ async function displayData(specifiquePhotographer, specifiquePhotographerMedias)
     //ajout des contenus multimédias
     specifiquePhotographerMedias.forEach(function (mediaTmp) {
         let divMediaTmp = mediaFactory(mediaTmp, "assets/photographers/" + photosFolder + "/");
+        divMediaTmp.setAttribute("aria-labelledby", "mainContent");
         photographerSection.appendChild(divMediaTmp);
         totalLikes += mediaTmp.likes;
     });
