@@ -149,7 +149,7 @@ function changeTri() {
     let photographer_section = document.querySelector('div.photographer_section');
     let tri = photographer_section.querySelector('div#tri');
     let triValue = tri.querySelector('select').selectedOptions[0].innerText;
-    tri.querySelector('select').selectedOptions[0].setAttribute("aria-current");
+    tri.querySelector('select').selectedOptions[0].setAttribute("aria-current", "page");
     let previews = photographer_section.querySelectorAll('div.preview');
     let previewsSorted = [];
 
