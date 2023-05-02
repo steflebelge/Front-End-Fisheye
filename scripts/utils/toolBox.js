@@ -84,10 +84,12 @@ function navigationClavier() {
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
     modal.querySelector('input').focus();
 }
 function closeModal() {
     const modal = document.getElementById("contact_modal");
+    modal.setAttribute("aria-hidden", "true");
     modal.style.display = "none";
 }
 
@@ -95,6 +97,7 @@ function closeModal() {
 function displaylightBox(elt) {
     const lightBox = document.getElementById("lightBox");
     lightBox.querySelector('div#media').innerHTML = "";
+    lightBox.setAttribute("aria-hidden", "false");
     let imgTmp = document.createElement('img');
     imgTmp.src = elt.src;
     if (elt.nodeName === "VIDEO") {
@@ -117,6 +120,7 @@ function displaylightBox(elt) {
 }
 function closelightBox() {
     const lightBox = document.getElementById("lightBox");
+    lightBox.setAttribute("aria-hidden", "true");
     lightBox.style.display = "none";
 }
 

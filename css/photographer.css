@@ -75,6 +75,7 @@ div#lightBox div#media video{
     object-fit: cover;
     z-index: 0;
     max-width: 85%;
+    overflow: hidden;
 }
 
 .photograph-header,
