@@ -37,7 +37,7 @@ div#lightBox .modal > img{
     z-index: 1;
 }
 div#lightBox .modal > img#prev{
-    rotate: 180deg;
+    transform: rotate(180deg);
 }
 div#lightBox .modal > img#next{
     position: absolute;
