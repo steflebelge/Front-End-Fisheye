@@ -8,7 +8,7 @@ function photographerFactory(data, pageConcernee){
     const picture = `assets/photographers/profiles/${portrait}`;
 
     //generation d'un element dom neccessaire selon la page
-    function getNewDOMElement(photographHeader, specifiquePhotographerMedias) {
+    function getNewDOMElement(photographHeader) {
         //preparation des elements generiques
         const article = document.createElement('article');
         const img = document.createElement('img');

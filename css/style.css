@@ -81,7 +81,7 @@ h1 {
 }
 
 .photograph-header img,
-.photographer_section article img {
+.photographer_section article img:not(.likesImage) {
     height: 200px;
     width: 200px;
     border-radius: 50%;

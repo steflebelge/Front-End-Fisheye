@@ -130,39 +130,39 @@ div#lightBox div#media video{
     margin-left: 5px;
 }
 
-.photographer_section div.preview{
+.photographer_section article.preview{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
 }
 
-.photographer_section div.preview img,
-.photographer_section div.preview video{
+.photographer_section article.preview img,
+.photographer_section article.preview video{
     width: 300px;
     height: 300px;
     object-fit: cover;
     border-radius: 5px;
 }
-.photographer_section div.preview img:hover,
-.photographer_section div.preview video{
+.photographer_section article.preview img:hover,
+.photographer_section article.preview video:hover{
     cursor: pointer;
 }
 
 
-.photographer_section div.preview span.infosContainer{
-    margin-top: 10px;
+.photographer_section article.preview span.infosContainer{
+    width: 100%;
     color: #911C1C;
 }
 
-.photographer_section div.preview span.infosContainer p{
+.photographer_section article.preview span.infosContainer p{
     margin: 0;
     padding: 0;
     display: inline;
 }
-.photographer_section div.preview span.infosContainer p.likesCounter {
+.photographer_section article.preview span.infosContainer p.likesCounter {
     float: right;
 }
-.photographer_section div.preview span.infosContainer img{
+.photographer_section article.preview span.infosContainer img{
     width: 15px;
     height: 15px;
     float: right;
@@ -194,6 +194,8 @@ div#bandeau{
 div#bandeau img{
     width: 15px;
     height: 15px;
+    margin-left: 5px;
+    vertical-align: middle;
 }
 
 

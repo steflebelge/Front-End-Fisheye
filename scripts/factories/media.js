@@ -1,11 +1,11 @@
 //Media factory, crée les elements neccessaire a l'affichage des medias salon leur type (img/video)
 function mediaFactory(mediaData, folderName) {
-    let divTmp = document.createElement('div');
-    divTmp.classList.add('preview');
-    divTmp.dataset.date = mediaData.date;
-    divTmp.dataset.likes = mediaData.likes;
-    divTmp.dataset.titre = mediaData.title;
-    divTmp.dataset.idMedia = mediaData.id;
+    let articleTmp = document.createElement('article');
+    articleTmp.classList.add('preview');
+    articleTmp.dataset.date = mediaData.date;
+    articleTmp.dataset.likes = mediaData.likes;
+    articleTmp.dataset.titre = mediaData.title;
+    articleTmp.dataset.idMedia = mediaData.id;
 
 
     let textTmp = document.createElement('p');
@@ -31,15 +31,15 @@ function mediaFactory(mediaData, folderName) {
         //balise video + autoplay false
         imgTmp = document.createElement('video');
         imgTmp.src=folderName + mediaData.video;
-        imgTmp.innerText = "Votre navigateur ne permet pas de lire les vidéos.";
+        imgTmp.innerText = mediaData.title;
     }
 
     infosContainer.appendChild(textTmp);
     infosContainer.appendChild(likesImage);
     infosContainer.appendChild(likesCounter);
-    divTmp.appendChild(imgTmp);
-    divTmp.appendChild(infosContainer);
-    return divTmp;
+    articleTmp.appendChild(imgTmp);
+    articleTmp.appendChild(infosContainer);
+    return articleTmp;
 }
 
 export default mediaFactory;

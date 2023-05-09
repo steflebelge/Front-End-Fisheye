@@ -102,8 +102,7 @@ function displaylightBox(elt) {
     imgTmp.src = elt.src;
     if (elt.nodeName === "VIDEO") {
         imgTmp = document.createElement('video');
-        imgTmp.innerText = "Votre navigateur ne permet pas de lire les vidéos. Mais vous pouvez toujours";
-        imgTmp.innerHTML = '<source src="' + elt.src + '" type="video/mp4">';
+        imgTmp.innerHTML = '<source src="' + elt.src + '" type="video/mp4">' + elt.innerHTML;
         imgTmp.setAttribute('controls', '');
         imgTmp.setAttribute('autoplay', '');
     }
@@ -130,12 +129,12 @@ function nextMedia() {
     let idImgActuelle = document.getElementById('media').firstElementChild.id;
 
     //recuperation avec id + class preview et verif si next/prev existe + recup elt
-    let divImgActuelle = document.querySelector('div.preview[data-id-media="' + idImgActuelle + '"]');
-    if (divImgActuelle.nextElementSibling
-        && divImgActuelle.nextElementSibling.firstElementChild)
-        divImgActuelle.nextElementSibling.firstElementChild.click();
+    let articleImgActuelle = document.querySelector('article.preview[data-id-media="' + idImgActuelle + '"]');
+    if (articleImgActuelle.nextElementSibling
+        && articleImgActuelle.nextElementSibling.firstElementChild)
+        articleImgActuelle.nextElementSibling.firstElementChild.click();
     else
-        document.querySelector('div.preview').firstElementChild.click();
+        document.querySelector('article.preview').firstElementChild.click();
 
 }
 function prevMedia() {
@@ -143,13 +142,13 @@ function prevMedia() {
     let idImgActuelle = document.getElementById('media').firstElementChild.id;
 
     //recuperation avec id + class preview et verif si next/prev existe + recup elt
-    let divImgActuelle = document.querySelector('div.preview[data-id-media="' + idImgActuelle + '"]');
-    if (divImgActuelle.previousSibling
-        && divImgActuelle.previousSibling.id !== "tri"
-        && divImgActuelle.previousSibling.firstElementChild)
-        divImgActuelle.previousSibling.firstElementChild.click();
+    let articleImgActuelle = document.querySelector('article.preview[data-id-media="' + idImgActuelle + '"]');
+    if (articleImgActuelle.previousSibling
+        && articleImgActuelle.previousSibling.id !== "tri"
+        && articleImgActuelle.previousSibling.firstElementChild)
+        articleImgActuelle.previousSibling.firstElementChild.click();
     else
-        document.querySelectorAll('div.preview')[document.querySelectorAll('div.preview').length - 1].firstElementChild.click();
+        document.querySelectorAll('article.preview')[document.querySelectorAll('article.preview').length - 1].firstElementChild.click();
 }
 
 //Gestion du tri des medias d'un photographe
@@ -158,7 +157,7 @@ function changeTri() {
     let tri = photographer_section.querySelector('div#tri');
     let triValue = tri.querySelector('select').selectedOptions[0].innerText;
     tri.querySelector('select').selectedOptions[0].setAttribute("aria-current", "page");
-    let previews = photographer_section.querySelectorAll('div.preview');
+    let previews = photographer_section.querySelectorAll('article.preview');
     let previewsSorted = [];
 
     switch (triValue) {
@@ -259,7 +258,7 @@ function submitForm() {
 
         //transforme le json en string pour envoi via xhr/fetch
         let dataToSend = JSON.stringify(jsonData);
-        console.log(dataToSend);
+        console.log("Informations du formulaire : " + dataToSend);
         document.querySelector('form').reset();
         document.getElementById('msg').value = "";
     }

@@ -31,6 +31,10 @@
         font-size: 45px;
     }
 
+    #msg {
+        max-height: 75px;
+    }
+
 }
 
 @media only screen and (max-width: 680px) {
@@ -54,10 +58,6 @@
     .modal header h2{
         margin: 0;
         width: 100%;
-    }
-
-    #msg {
-        max-height: 75px;
     }
 }
 

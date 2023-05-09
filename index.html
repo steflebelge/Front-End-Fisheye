@@ -12,14 +12,14 @@
   <body>
 
     <!-- Header avec logo et texte -->
-    <header aria-label="header">
+    <header id="header" aria-label="header">
         <a aria-labelledby="header" tabindex="1" title="Go to home page" href="/Front-End-Fisheye/"><img src="assets/images/logo.png" alt="Logo FishEye" class="logo" /></a>
         <h1 aria-labelledby="header">Nos photographes</h1>
     </header>
 
     <!-- Contenu de la page, remplit par le JS   -->
     <main aria-label="mainContent" id="main">
-        <div aria-labelledby="mainContent" class="photographer_section"></div>
+        <div aria-labelledby="main" class="photographer_section"></div>
     </main>
 
     <!-- Ajout du script JS avec un type module car imports   -->
@@ -30,8 +30,7 @@
 
 <!--
 todo :
-  - Accessibilité ok ?
-  - validateurs ok ?
-  - lecteur ecran ?
-  - eslint ?
+  - role des maquettes -> aria role ?
+
+  - soutenance avec support
 -->

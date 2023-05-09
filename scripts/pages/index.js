@@ -1,4 +1,4 @@
-import {getPhotographers, navigationClavier} from "../utils/toolBox.js";
+import {getPhotographers} from "../utils/toolBox.js";
 import photographerFactory from "../factories/photographer.js";
 
 //Script de la page d'accueil
@@ -16,7 +16,7 @@ async function displayData(photographers) {
     });
 }
 
-async function init() {
+async function init(){
     // Récupère les datas des photographes
     const {photographers} = await getPhotographers();
 

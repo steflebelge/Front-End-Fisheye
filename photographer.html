@@ -12,20 +12,22 @@
 <body>
 
 <!-- Header avec logo et texte -->
-<header aria-label="header">
-    <a aria-labelledby="header" tabindex="1" title="Go to home page" href="/Front-End-Fisheye/"><img src="assets/images/logo.png" alt="Logo FishEye" class="logo"/></a>
+<header id="header" aria-label="header">
+    <a aria-labelledby="header" tabindex="1" title="Go to home page" href="/Front-End-Fisheye/"><img
+            src="assets/images/logo.png" alt="Logo FishEye" class="logo"/></a>
 </header>
 
 <!-- Contenu de la page, remplit par le JS   -->
 <main aria-label="mainContent" id="main">
-    <div aria-labelledby="mainContent" class="photograph-header">
-        <button aria-haspopup="true" role="button" tabindex="2" id="openModal" class="contact_button">Contactez-moi</button>
+    <div aria-labelledby="main" class="photograph-header">
+        <button aria-haspopup="true" role="button" tabindex="2" id="openModal" class="contact_button">Contactez-moi
+        </button>
     </div>
 </main>
 
 <!-- Modale du formulaire de contact-->
 <div id="contact_modal" aria-hidden="true" role="dialog" aria-label="contactForm">
-    <div class="modal" aria-labelledby="contactForm">
+    <div class="modal" aria-labelledby="contact_modal">
         <header>
             <h2>Contactez-moi</h2>
             <img id="closeModale" src="assets/icons/close.svg" title="Fermer la lightBox" alt="Fermer la lightBox"/>
@@ -34,19 +36,23 @@
         <form onsubmit="event.preventDefault()">
             <div>
                 <label for="prenom">Prénom</label>
-                <input required aria-required="true" aria-describedby="text" type="text" placeholder="Jean" id="prenom" aria-label="prenom" name="prenom"/>
+                <input required aria-required="true" aria-describedby="prenom" type="text" placeholder="Jean"
+                       id="prenom" aria-label="prenom" name="prenom"/>
             </div>
             <div>
                 <label for="nom">Nom</label>
-                <input required aria-required="true" aria-describedby="text" type="text" placeholder="Dujardin" id="nom" aria-label="nom" name="nom"/>
+                <input required aria-required="true" aria-describedby="nom" type="text" placeholder="Dujardin" id="nom"
+                       aria-label="nom" name="nom"/>
             </div>
             <div>
                 <label for="mail">Mail</label>
-                <input required aria-required="true" aria-describedby="email" type="email" placeholder="Jean.dujardin@gmail.com" aria-label="email" id="mail" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                <input required aria-required="true" aria-describedby="mail" type="email"
+                       placeholder="Jean.dujardin@gmail.com" aria-label="email" id="mail" name="mail"
+                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
             </div>
             <div>
                 <label for="msg">Message</label>
-                <textarea required aria-required="true" name="msg" id="msg" cols="30" rows="10"></textarea>
+                <textarea required aria-required="true" name="msg" id="msg" cols="30" rows="7"></textarea>
             </div>
             <button id="sendForm" class="contact_button">Envoyer</button>
         </form>
@@ -56,10 +62,13 @@
 <!-- Lightbox permettant l'affichage en plein ecran des medias-->
 <div id="lightBox" aria-hidden="true" role="dialog" aria-label="lightBox">
     <div class="modal" aria-labelledby="lightBox">
-        <img id="prev" class="filterToRed" src="assets/icons/arrow.svg" title="Image précedente" alt="Image précedente">
+        <img id="prev" class="filterToRed" src="assets/icons/arrow.svg" title="Image précedente" alt="Image précedente"
+             aria-roledescription="Image précedente">
         <div id="media"></div>
-        <img id="next" class="filterToRed" src="assets/icons/arrow.svg" title="Image suivante" alt="Image suivante">
-        <img id="close" class="filterToRed" src="assets/icons/close.svg" title="Fermer la lightBox" alt="Fermer la lightBox">
+        <img id="next" class="filterToRed" src="assets/icons/arrow.svg" title="Image suivante" alt="Image suivante"
+             aria-roledescription="Image suivante">
+        <img id="close" class="filterToRed" src="assets/icons/close.svg" title="Fermer la lightBox"
+             alt="Fermer la lightBox" aria-roledescription="Fermer la lightBox">
     </div>
 </div>
 

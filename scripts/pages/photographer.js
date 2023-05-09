@@ -12,7 +12,7 @@ import {
 
 //Script de gestion du fonctionnement de la page d'un photographe
 
-//Affichage des donées liées au photographe concerné
+//Affichage des données liées au photographe concerné
 async function displayData(specifiquePhotographer, specifiquePhotographerMedias) {
     //recuperation de la div
     const mainContent = document.querySelector("main#main");
@@ -43,11 +43,9 @@ async function displayData(specifiquePhotographer, specifiquePhotographerMedias)
     });
 
     //click sur image
-    photographerSection.querySelectorAll("div.preview").forEach(function (divTmp) {
+    photographerSection.querySelectorAll("article.preview").forEach(function (divTmp) {
         divTmp.firstElementChild.addEventListener("click", displaylightBox.bind(this, divTmp.firstElementChild));
     });
-
-    const photographerHeader = mainContent.firstElementChild;
     document.getElementById('openModal').addEventListener('click', displayModal);
     document.getElementById('closeModale').addEventListener('click', closeModal);
     document.getElementById('sendForm').addEventListener('click', submitForm);
